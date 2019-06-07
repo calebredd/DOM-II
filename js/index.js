@@ -6,6 +6,31 @@ let body = document.querySelector("body");
 let heading = document.querySelector(".logo-heading");
 let textBox = document.createElement("input");
 
+document.addEventListener("scroll", e => {
+  if (e.timeStamp / 100 < 376) {
+    document
+      .querySelectorAll(".content-section")[0]
+      .querySelector("img").style.width =
+      `${Math.round(e.timeStamp / 100)}` + "px";
+    document
+      .querySelectorAll(".content-section")[0]
+      .querySelector("img").style.height =
+      `${Math.round(e.timeStamp/100)}` + "px";
+  }
+});
+document.addEventListener("dblclick", e => {
+  if (e.timeStamp/100< 376) {
+    document
+      .querySelectorAll(".content-section")[1]
+      .querySelector("img").style.width =
+      `${Math.round(e.timeStamp/100)}` + "px";
+    document
+      .querySelectorAll(".content-section")[1]
+      .querySelector("img").style.height =
+      `${Math.round(e.timeStamp/100)}` + "px";
+  }
+});
+
 body.addEventListener("mousemove", e => {
   body.style.background = `rgb(${Math.round(e.pageX / 3)},${Math.round(
     e.pageY / 3
@@ -83,8 +108,6 @@ busPic.onmousemove = function(e) {
     e.target.style.border = "10px solid white";
   }
 };
-
-
 
 //     <img src="img/fun-bus.jpg" alt="bus in the sand">
 //     <h2>Welcome To Fun Bus!</h2>
